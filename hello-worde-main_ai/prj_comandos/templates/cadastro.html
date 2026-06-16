@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cadastro</title>
+ <link rel="stylesheet" href="/prj_comandos/static/estilo_cores.css">
+ <link rel="stylesheet" href="/prj_comandos/static/cadastro.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+   <main class="conteiner">
+       <button class="nav-btn btn-home" onclick="location.href='/'" style="position: absolute; top: 15px; left: 15px; z-index: 10; cursor: pointer; padding: 5px 10px;"><i class="fa-solid fa-house"></i> Home</button>
+
+       <div class="lado-cadastro">
+            <form class="cadastro" method="POST" action="/cadastro">
+                <h1 style="color: var(--texto-claro);">cadastro</h1>
+
+                <div class="grid-inputs">
+                    <div class="box"><input placeholder="nome" type="text" name="nome" required></div>
+                    <div class="box"><input placeholder="CPF" type="number" name="CPF" required></div>
+                    <div class="box"><input placeholder="telefone" name="celular" type="tel"></div>
+                    <div class="box"><input placeholder="Email" name="email" type="email" required></div>
+
+                    <div class="box"><input placeholder="senha" name="senha" type="password" id="senha1" required></div>
+                    <div class="box"><input placeholder="confirme senha" type="password" id="senha2" required></div>
+
+                    <div class="checkbox-box">
+                        <label style="color: var(--texto-claro);"><input type="checkbox" class="chk-mostrar" data-target="senha1"> mostrar senha</label>
+                    </div>
+                    <div class="checkbox-box">
+                        <label style="color: var(--texto-claro);"><input type="checkbox" class="chk-mostrar" data-target="senha2"> mostrar senha</label>
+                    </div>
+
+                    <div class="box"><input placeholder="idade" name="data_nascimento" type="date" required></div>
+                    <div class="box"><input placeholder="estado" name="estado" type="text"></div>
+                    <div class="box text-completo"><input placeholder="cidade" name="cidade" type="text"></div>
+                </div>
+
+                <button type="submit" class="loginF" style="background-color: var(--azul-principal); color: white;">cadastrar</button>
+
+                <div class="link" style="margin-top: 10px;">
+                    <a href="/login" style="color: var(--links);">já possui cadastro?</a>
+                </div>
+            </form>
+       </div>
+
+       <div class="lado-imagem">
+           <img src="/prj_comandos/static/com.jpg" alt="Imagem Cadastro" style="width:100%; height:100%; object-fit:cover;">
+       </div>
+ </main>
+
+ <script src="/prj_comandos/javascript/scripts_interativos.js"></script>
+</body>
+</html>

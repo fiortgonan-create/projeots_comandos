@@ -1,0 +1,107 @@
+/* ==========================================================================
+   PALETA DE CORES GLOBAL - HELP DESK COMANDOS
+   Cores baseadas na paleta fornecida: E5F0FF até 000E24
+   ========================================================================== */
+:root {
+    /* Tons Claros (Para Textos, Bordas suaves e Fundos de inputs) */
+    --azul-50: #E5F0FF;
+    --azul-100: #CCE0FF;
+    --azul-200: #99C2FF;
+    --azul-300: #66A3FF;
+
+    /* Tons Médios/Vibrantes (Para Botões, Destaques e Links) */
+    --azul-400: #3385FF;
+    --azul-principal: #0066FF; /* Cor principal de ação */
+    --azul-hover: #0052CC;     /* Cor de ação quando o mouse passa por cima */
+
+    /* Tons Escuros (Para Fundos, Cards e Elementos de Contraste) */
+    --azul-700: #003D99;
+    --azul-800: #002966;
+    --bg-card: #001433;        /* Fundo dos formulários e painéis */
+    --bg-total: #000E24;       /* Fundo principal de todo o site */
+}
+
+/* ==========================================================================
+   APLICAÇÃO GLOBAL DA PALETA
+   Essas regras sobrescrevem cores antigas para unificar o design
+   ========================================================================== */
+
+/* Fundo da página e texto padrão */
+body {
+    background-color: var(--bg-total) !important;
+    color: var(--azul-50) !important;
+}
+
+/* Containers de Login, Cadastro, Chamados e a Dashboard da Home */
+.conteiner, .dashboard, .modal-card, .page-container, .lado-cadastro, .lado-login {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--azul-800) !important;
+    color: var(--azul-50);
+}
+
+/* Garante que os títulos e parágrafos fiquem legíveis no fundo escuro */
+h1, h2, h3, p, label, span, .label-nome {
+    color: var(--azul-50) !important;
+}
+
+/* ==========================================================================
+   BOTÕES GERAIS E LINKS
+   ========================================================================== */
+button, .login, .loginF, .btn-enviar, .submit-login-btn {
+    background-color: var(--azul-principal) !important;
+    color: var(--azul-50) !important;
+    border: none !important;
+    transition: background-color 0.3s ease, transform 0.1s ease !important;
+}
+
+button:hover, .login:hover, .loginF:hover, .btn-enviar:hover, .submit-login-btn:hover {
+    background-color: var(--azul-hover) !important;
+}
+
+button:active, .login:active, .loginF:active {
+    transform: scale(0.98) !important;
+}
+
+/* Links (Esqueceu a senha, Cadastre-se, etc) */
+a {
+    color: var(--azul-300) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--azul-200) !important;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   INPUTS, TEXTAREAS E CAIXAS DE SELEÇÃO
+   ========================================================================== */
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+    background-color: var(--azul-50) !important; /* Fundo bem claro */
+    color: var(--bg-total) !important; /* Texto escuro dentro do input */
+    border: 2px solid var(--azul-200) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--azul-principal) !important;
+    outline: none !important;
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.4) !important;
+}
+
+/* ==========================================================================
+   CABEÇALHOS E RODAPÉS (HOME E CHAMADOS)
+   ========================================================================== */
+.main-header, .top-bar, .nav-bar, .main-footer, .bloco-inferior {
+    background-color: var(--bg-card) !important;
+    border-color: var(--azul-800) !important;
+}
+
+/* Customização para a tela de chamados (Upload de arquivos) */
+.btn-upload {
+    background-color: transparent !important;
+    border: 2px dashed var(--azul-300) !important;
+}
+.btn-upload span, .btn-upload small {
+    color: var(--azul-200) !important;
+}

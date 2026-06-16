@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Desk Comandos - Login</title>
+  <link rel="stylesheet" href="/prj_comandos/static/estilo_cores.css">
+  <link rel="stylesheet" href="/prj_comandos/static/login.css">
+</head>
+<body>
+
+  <div class="conteiner">
+    <div class="lado-imagem">
+      <img src="/prj_comandos/static/com.jpg" alt="Help Desk Comandos Logo">
+    </div>
+    <div class="lado-login">
+      <form id="form" method="POST" action="/login">
+        <h1 style="color: var(--texto-claro);">login</h1>
+
+        <div class="input-box">
+          <input type="email" name="email" placeholder="e-mail" required>
+        </div>
+
+        <div class="input-box">
+          <input type="password" name="senha" placeholder="senha" required id="campo-senha-login">
+        </div>
+
+        <div class="lembrar_senha">
+          <label style="color: var(--texto-claro);"><input type="checkbox"> lembrar de mim</label>
+          <a href="#" style="color: var(--links);">esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="login" style="background-color: var(--azul-principal); color: white;">entrar</button>
+
+        <div class="cadastrar">
+          <p style="color: var(--texto-claro);">não tem uma conta? <a href="/cadastro" style="color: var(--links);">cadastre-se</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/prj_comandos/javascript/scripts_interativos.js"></script>
+</body>
+</html>

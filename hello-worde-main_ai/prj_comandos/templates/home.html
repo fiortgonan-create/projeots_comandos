@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Técnico</title>
+  <link rel="stylesheet" href="/prj_comandos/static/estilo_cores.css">
+  <link rel="stylesheet" href="/prj_comandos/static/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="page-container">
+
+    <header class="main-header">
+      <nav class="nav-bar">
+        <div class="nav-left">
+          <div class="logo">
+            <img src="/prj_comandos/static/com.jpg" alt="Help Desk Comandos">
+          </div>
+          <div class="circle-icon"><i class="fa-solid fa-arrow-right"></i></div>
+
+          <button class="nav-btn btn-home" onclick="location.href='/'"><i class="fa-solid fa-house"></i> Home</button>
+          <button class="nav-btn btn-login" onclick="location.href='/login'"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+          <button class="nav-btn btn-cadastro" onclick="location.href='/cadastro'"><i class="fa-solid fa-user-plus"></i> Cadastro</button>
+          <button class="nav-btn btn-tecnico" onclick="location.href='/chamado'"><i class="fa-solid fa-screwdriver-wrench"></i> Solicitar Técnico</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+
+      <section class="left-column">
+
+        <div class="search-box">
+          <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> pesquisar chamados ativos</button>
+        </div>
+
+        <div class="explain-list">
+          <div class="explain-item">
+            <h3 style="margin-bottom: 5px;"><i class="fa-solid fa-circle-info"></i> Informativo 01</h3>
+            <p>Monitore aqui o andamento dos reparos e os prazos de atendimento da equipe técnica.</p>
+          </div>
+          <div class="explain-item">
+            <h3 style="margin-bottom: 5px;"><i class="fa-solid fa-clock"></i> Atualizações Recentes</h3>
+            <p>Seu chamado para reparo de computador foi atribuído a um técnico especializado.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="right-column">
+
+        <div class="upload-box" onclick="location.href='/chamado'">
+          <div class="upload-icon"></div>
+          <span>clique aqui para anexar arquivo de erro</span>
+          <small style="color: var(--azul-300);">ou gerencie abrindo um chamado técnico</small>
+        </div>
+
+        <div class="faq-box">
+          <h3><i class="fa-solid fa-circle-question"></i> Dúvidas Frequentes</h3>
+          <div class="faq-content" style="padding: 15px; color: #333;">
+            <p style="font-size: 14px; margin-bottom: 10px;"><strong>Como vejo o status do meu problema?</strong><br>Basta acompanhar a lista informativa na coluna esquerda.</p>
+            <p style="font-size: 14px;"><strong>Qual o prazo de resposta?</strong><br>Nossos técnicos respondem em até 2 horas úteis.</p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="main-footer">
+      &copy; 2026 Help Desk Comandos - Todos os direitos reservados.
+    </footer>
+
+  </div>
+
+  <script src="/prj_comandos/static/scripts_interativos.js"></script>
+</body>
+</html>

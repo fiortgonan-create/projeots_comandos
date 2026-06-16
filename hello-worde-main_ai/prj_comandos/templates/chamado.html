@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abertura de Chamado - HelpDesk</title>
+  <link rel="stylesheet" href="/prj_comandos/static/estilo_cores.css">
+  <link rel="stylesheet" href="/prj_comandos/static/chamado.css">
+
+</head>
+<body>
+
+  <main class="dashboard">
+    <header class="topo-perfil">
+      <div class="avatar-perfil" style="background-image: url('/static/com.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="bloco-usuario">
+          <span class="label-nome">nome</span>
+            <input type="text" placeholder="Digite seu nome completo" required>
+        </div>
+      </div>
+    </header>
+
+    <form method="POST" action="/chamado" style="display: flex; flex-direction: column; gap: 35px; width: 100%;">
+
+      <section class="conteudo-central">
+        <article class="bloco-filtro maquinas">
+          <h3 style="color: var(--texto-claro);">tipo de máquina</h3>
+          <div class="lista-opcoes">
+            <label class="item-opcao"><input type="radio" name="tipo_maquina" value="celular" checked> celular</label>
+            <label class="item-opcao"><input type="radio" name="tipo_maquina" value="notebook"> notebook</label>
+            <label class="item-opcao"><input type="radio" name="tipo_maquina" value="computador"> computador</label>
+            <label class="item-opcao"><input type="radio" name="tipo_maquina" value="monitor"> monitor</label>
+            <label class="item-opcao"><input type="radio" name="tipo_maquina" value="impressora"> impressora</label>
+          </div>
+        </article>
+
+        <article class="bloco-filtro descricao">
+          <h3 style="color: var(--texto-claro);">o que está acontecendo?</h3>
+          <textarea name="descricao" placeholder="Descreva detalhadamente o problema ou defeito apresentado na máquina..." required></textarea>
+        </article>
+
+        <article class="bloco-filtro upload">
+          <h3 style="color: var(--texto-claro);">arquivos / evidências</h3>
+          <div class="zona-upload">
+            <input type="file" id="arquivo-erro" multiple>
+            <label for=\"arquivo-erro\" class="btn-upload">
+              <span>clique para selecionar</span>
+              <small>imagens, logs ou PDFs</small>
+            </label>
+          </div>
+        </article>
+      </section>
+
+      <footer class="bloco-inferior" style="display:flex; justify-content: space-between; align-items:center;">
+        <button type="button" class="btn-voltar" onclick="location.href='/'" style="padding:10px 20px; cursor:pointer; border-radius:4px;">voltar</button>
+        <button type="submit" class="btn-enviar" style="background-color: var(--azul-principal); color: white; padding:10px 30px; cursor:pointer; border-radius:4px;">enviar chamado</button>
+      </footer>
+
+    </form>
+  </main>
+
+  <script src="/prj_comandos/javascript/scripts_interativos.js"></script>
+</body>
+</html>

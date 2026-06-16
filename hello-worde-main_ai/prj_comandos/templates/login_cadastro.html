@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Desk Comandos - Autenticação</title>
+  <link rel="stylesheet" href="/prj_comandos/static/estilo_cores.css">
+  <link rel="stylesheet" href="/prj_comandos/static/login.css">
+  <link rel="stylesheet" href="/prj_comandos/static/cadastro.css">
+  <style>
+      /* Estilos extras para gerenciar a transição animada */
+      .escondido { display: none !important; }
+      .animar-entrada {
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+      .conteiner { height: auto; min-height: 620px; }
+  </style>
+</head>
+<body>
+
+  <div class="conteiner animar-entrada">
+
+    <div class="lado-imagem">
+      <img src="/prj_comandos/static/com.jpg" alt="Help Desk Comandos Logo">
+    </div>
+
+    <div class="lado-login" id="bloco-autenticacao">
+
+      <form id="form-login" class="cadastro animar-entrada" method="POST" action="/login">
+        <h1>login</h1>
+
+        <div class="input-box" style="margin-bottom: 15px;">
+          <input type="email" name="email" placeholder="e-mail" required style="width: 100%; height: 45px; border-radius: 40px; padding: 0 15px; outline: none;">
+        </div>
+
+        <div class="input-box" style="margin-bottom: 15px;">
+          <input type="password" name="senha" placeholder="senha" required style="width: 100%; height: 45px; border-radius: 40px; padding: 0 15px; outline: none;">
+        </div>
+
+        <div class="lembrar_senha" style="margin-bottom: 15px;">
+          <label><input type="checkbox"> lembrar de mim</label>
+          <a href="#">esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="loginF">entrar</button>
+
+        <div class="cadastrar" style="margin-top: 15px;">
+          <p>não tem uma conta? <a href="#" id="ir-para-cadastro">cadastre-se</a></p>
+        </div>
+      </form>
+
+      <form id="form-cadastro" class="cadastro escondido" method="POST" action="/cadastrar_usuario">
+        <h1>cadastro</h1>
+
+        <div class="grid-inputs">
+            <div class="box"><input placeholder="nome" type="text" name="nome" required></div>
+            <div class="box"><input placeholder="CPF" type="number" name="CPF" required></div>
+            <div class="box"><input placeholder="telefone" name="celular" type="tel"></div>
+            <div class="box"><input placeholder="Email" name="email" type="email" required></div>
+            <div class="box"><input placeholder="senha" name="senha" type="password" required></div>
+            <div class="box"><input placeholder="confirme senha" type="password" required></div>
+
+            <div class="checkbox-box"><label><input type="checkbox"> mostrar senha</label></div>
+            <div class="checkbox-box"><label><input type="checkbox"> mostrar senha</label></div>
+
+            <div class="box"><input placeholder="idade" name="data_nascimento" type="date" required></div>
+            <div class="box"><input placeholder="estado" name="estado" type="text"></div>
+            <div class="box text-completo"><input placeholder="cidade" name="cidade" type="text"></div>
+        </div>
+
+        <button type="submit" class="loginF">cadastrar</button>
+
+        <div class="link" style="margin-top: 15px;">
+            <a href="#" id="ir-para-login">já possui cadastro?</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="/prj_comandos/javascript/scripts_interativos.js"></script>
+  <script>
+      function alternarLoginCadastro(mostrarCadastro) {
+          const formLogin = document.getElementById('form-login');
+          const formCadastro = document.getElementById('form-cadastro');
+
+          if (mostrarCadastro) {
+              formLogin.classList.add('escondido');
+              formCadastro.classList.remove('escondido');
+              formCadastro.classList.add('animar-entrada');
+          } else {
+              formCadastro.classList.add('escondido');
+              formLogin.classList.remove('escondido');
+              formLogin.classList.add('animar-entrada');
+          }
+      }
+
+      // Ativação dos gatilhos de clique para realizar a transição fluida
+      document.getElementById('ir-para-cadastro').onclick = (e) => { e.preventDefault(); alternarLoginCadastro(true); };
+      document.getElementById('ir-para-login').onclick = (e) => { e.preventDefault(); alternarLoginCadastro(false); };
+
+      // Verifica parâmetros da URL para abrir direto na seção correta se vindo da Home
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('modo') === 'cadastro') {
+          alternarLoginCadastro(true);
+      }
+  </script>
+</body>
+</html>
